@@ -18,6 +18,18 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isOpen]);
+
   const menuItems = [
     { href: "/", label: "Home" },
     { href: "/exhibition", label: "Exhibition" },
@@ -140,7 +152,7 @@ const Navbar: React.FC = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed top-0 right-0 h-full w-full bg-black/80 backdrop-blur-sm shadow-lg md:hidden"
+            className="fixed top-0 right-0 h-full w-full bg-black/80 backdrop-blur-sm shadow-lg md:hidden overflow-y-auto"
           >
             <div className="flex flex-col h-full">
               <div className="flex justify-end p-4">
