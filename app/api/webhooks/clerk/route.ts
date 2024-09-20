@@ -3,8 +3,12 @@ import type { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
-    const payload = await request.json();
-    // Process the webhook payload here
+    const _payload = await request.json();
+    // If you're not using the payload, prefix it with an underscore
+    // If you plan to use it later, remove the underscore and process the payload here
+
+    // For example, you might log the payload:
+    // console.log('Received webhook payload:', _payload);
 
     // Return a response
     return NextResponse.json(

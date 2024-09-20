@@ -36,7 +36,7 @@ const HeroSlideshow: React.FC = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]); // Add slides.length to the dependency array
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
