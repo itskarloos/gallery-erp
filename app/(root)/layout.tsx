@@ -1,7 +1,18 @@
-import React from "react";
+import Footer from "@/components/shared/Footer";
+import Navbar from "@/components/shared/Navbar";
 
-const layout = () => {
-  return <div></div>;
-};
 
-export default layout;
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
+  );
+}
