@@ -1,7 +1,12 @@
 import React from "react";
+import HeroSlideshow from "@/components/shared/HeroSlide";
 
 const HomeView = () => {
-  return <div></div>;
+  return (
+    <div>
+      <HeroSlideshow />
+    </div>
+  );
 };
 
 export default HomeView;
