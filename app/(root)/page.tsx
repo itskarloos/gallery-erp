@@ -1,9 +1,10 @@
 import HeroSlideshow from "@/components/shared/HeroSlide";
+import HomeView from "@/view/home-view";
 
 export default function Home() {
   return (
     <div>
-      <HeroSlideshow />
+      <HomeView />
     </div>
   );
 }
