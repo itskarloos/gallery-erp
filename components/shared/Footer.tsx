@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
             <p className="text-gray-900 text-xs">
               Post Gallery, a contemporary art space in downtown Addis Ababa,
               showcases innovative art forms. It provides a platform for
-              artists, encourages dialogue on contemporary art's societal
+              artists, encourages dialogue on contemporary art&apos;s societal
               impact, and inspires art appreciation. With diverse exhibitions
               and programs, the gallery challenges perspectives and promotes
               artistic expression as a tool for communication and change.

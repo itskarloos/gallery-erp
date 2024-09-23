@@ -88,7 +88,7 @@ const ExhibitionPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen p-4 mt-20 bg-white">
+    <div className="min-h-screen p-4 mt-20">
       <h1 className="text-4xl font-bold text-center mb-8">
         Upcoming Exhibitions
       </h1>
