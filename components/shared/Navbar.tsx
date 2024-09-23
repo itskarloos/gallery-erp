@@ -188,7 +188,7 @@ const Navbar: React.FC = () => {
                   <motion.div key={item.href} variants={menuItemVariants}>
                     <Link
                       href={item.href}
-                      className="block text-white hover:bg-white/5 hover:text-white px-3 py-2 rounded-md font-light text-base font-medium"
+                      className="block text-white hover:bg-white/5 hover:text-white px-3 py-2 rounded-md font-light text-base"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
