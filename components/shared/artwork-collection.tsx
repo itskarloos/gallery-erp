@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { getAllArtwork } from "@/lib/actions/artwork.action";
-import { Artwork } from "@/types";
+
 import ArtworkCard from "./artwork-card";
 
 export default async function ArtworkCollection() {

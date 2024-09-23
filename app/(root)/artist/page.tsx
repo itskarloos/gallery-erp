@@ -1,4 +1,3 @@
-import ArtworkView from "@/view/artwork-view";
 import React from "react";
 
 const page = () => {
