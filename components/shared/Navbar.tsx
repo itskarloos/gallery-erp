@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
                   href={item.href}
                   className={`${
                     isAtTop
-                      ? "text-white hover:bg-white/5"
+                      ? "text-gray-50 hover:bg-white/5"
                       : "text-white hover:bg-gray-50"
                   } px-3 py-2 rounded-sm text-sm font-light tracking-wide transition-colors duration-300`}
                 >

@@ -1,4 +1,4 @@
-import HeroSlideshow from "@/components/shared/HeroSlide";
+import HeroSlideshow from "@/components/shared/hero-slide";
 import React from "react";
 
 const HomeView = () => {
