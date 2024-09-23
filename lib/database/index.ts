@@ -7,22 +7,35 @@ type MongooseCache = {
   promise: Promise<typeof mongoose> | null;
 };
 
-// Using const instead of let
-const cached: MongooseCache = (global as typeof globalThis & { mongoose?: MongooseCache }).mongoose || { conn: null, promise: null };
+const cached: MongooseCache = (
+  global as typeof globalThis & { mongoose?: MongooseCache }
+).mongoose || { conn: null, promise: null };
 
 export const connectToDatabase = async () => {
-  if (cached.conn) return cached.conn;
+  if (cached.conn) {
+    console.log("Using existing database connection");
+    return cached.conn;
+  }
 
-  if (!MONGODB_URI) throw new Error("MONGODB_URI is missing");
+  if (!MONGODB_URI) {
+    throw new Error("MONGODB_URI is missing");
+  }
 
-  cached.promise =
-    cached.promise ||
-    mongoose.connect(MONGODB_URI, {
-      dbName: "postgallery_db",
-      bufferCommands: false,
-    });
+  try {
+    if (!cached.promise) {
+      console.log("Creating new database connection");
+      cached.promise = mongoose.connect(MONGODB_URI, {
+        dbName: "postgallery_db",
+        bufferCommands: false,
+      });
+    }
 
-  cached.conn = await cached.promise;
+    cached.conn = await cached.promise;
+    console.log("Database connection established");
+    return cached.conn;
+  } catch (error) {
+    console.error("Error connecting to database:", error);
+    throw new Error("Failed to connect to database");
+  }
 
-  return cached.conn;
 };
